@@ -14,7 +14,7 @@ jobs:
       - name: Unzip project
         run: |
           mkdir -p project_content
-          unzip project.zip -d project_content
+          unzip inperson.zip -d project_content
           cp -r project_content/* .
           rm -rf project_content
 
@@ -22,8 +22,8 @@ jobs:
         run: |
           git config --global user.name "github-actions"
           git config --global user.email "github-actions@github.com"
-          git add . ':!project.zip'
-          git commit -m "Initial unzip of project.zip"
+          git add . ':!inperson.zip'
+          git commit -m "Initial unzip of inperson.zip"
           git push
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
